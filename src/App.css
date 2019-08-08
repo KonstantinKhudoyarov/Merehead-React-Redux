@@ -82,9 +82,10 @@
 
   .list__item-wrap {
     min-height: 120px;
+    box-shadow: none;
   }
 
   .list__item:nth-child(n+2) {
-    margin-top: 25px;
+    margin-top: 15px;
   }
 }
