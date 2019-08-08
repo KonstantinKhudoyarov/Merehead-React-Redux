@@ -6,7 +6,8 @@ export class Pagination extends React.Component {
 
     render() {
         const { switchPageHandler } = this.props;
-        const pagesAmount = Math.ceil(store.getState().users.length / store.getState().itemsPerPage);
+        const { users, itemsPerPage } = store.getState();
+        const pagesAmount = Math.ceil(users.length / itemsPerPage);
         const paginationButtons = [];
 
         for (let i = 1; i <= pagesAmount; i++) {
