@@ -1,5 +1,6 @@
 import React from 'react';
 import { store } from './store/index.js';
+import '../src/Pagination.css';
 
 export class Pagination extends React.Component {
 
