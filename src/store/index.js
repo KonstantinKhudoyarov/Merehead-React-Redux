@@ -125,10 +125,8 @@ const users = [
 ];
 
 const initialState = {
-    result: users,
+    users: users,
     currentPage: 1,
     itemsPerPage: 5
 };
-const store = createStore(currentPageReducer, initialState);
-
-export default store;
+export const store = createStore(currentPageReducer, initialState);

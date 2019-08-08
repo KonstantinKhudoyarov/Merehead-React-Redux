@@ -1,14 +1,15 @@
 import React from 'react';
-import store from './store/index.js';
+import { store } from './store/index.js';
 
-class Pagination extends React.Component {
+export class Pagination extends React.Component {
 
     render() {
-        const pagesAmount = Math.ceil(store.getState().result.length / store.getState().itemsPerPage);
+        const { switchPageHandler } = this.props;
+        const pagesAmount = Math.ceil(store.getState().users.length / store.getState().itemsPerPage);
         const paginationButtons = [];
 
         for (let i = 1; i <= pagesAmount; i++) {
-            paginationButtons.push(<li className="pagination__item">{i}</li>);
+            paginationButtons.push(<li key={i} className="pagination__item" onClick={switchPageHandler(i)}>{i}</li>);
         }
 
         return (
@@ -18,5 +19,3 @@ class Pagination extends React.Component {
         );
     }
 }
-
-export default Pagination;
